@@ -2,15 +2,25 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 const title = "Harry Potter Story-Song Series";
-const description = "Discover the Harry Potter saga like never before — through original chapter-by-chapter songs.";
-const canonical = "https://songified-stories.netlify.app/songified-stories/harryporter";
+const description = "A magical journey through Harry Potter, reimagined through original songs – one chapter at a time.";
 ---
 
-<BaseLayout {title} {description} {canonical}>
-  <h1>{title}</h1>
-  <p>Each chapter of the Harry Potter series reimagined as a cinematic ballad.</p>
-  <ul>
-    <li><a href="/songified-stories/harryporter/book1/chapter1">📘 Book 1 – Chapter 1: The Boy Who Lived</a></li>
-    <!-- 更多章節可繼續添加 -->
-  </ul>
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-6">
+
+    <h1 class="text-3xl font-bold">{title}</h1>
+    <p class="mb-4">{description}</p>
+
+    <ul class="list-disc list-inside space-y-2">
+      <li>
+        <a href="/songified-stories/harryporter/book1/">
+          Book 1: Harry Potter and the Sorcerer's Stone
+        </a>
+      </li>
+      <!-- 將來可加入 Book 2、Book 3… -->
+    </ul>
+
+  </main>
+
 </BaseLayout>
