@@ -2,6 +2,7 @@
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 
 const title = "A Child at the Door – from Harry Potter and the Sorcerer's Stone Book 1 CH1: The Boy Who Lived";
+
 const description = `📖 *Chapter 1: The Boy Who Lived* introduces us to the aftermath of a dark war in the wizarding world. On a cold night at Privet Drive, a mysterious child is left on a doorstep — a boy marked by a lightning scar, destined to change everything.
 🎵 This original storytelling ballad, *A Child at the Door*, captures the quiet sorrow, whispered secrets, and fragile hope of that fateful night. Blending fingerpicked acoustic guitar with intimate male vocals, it’s a tender beginning to our **Harry Potter Story-Song Series**, where every chapter finds its voice in music.
 
@@ -22,8 +23,8 @@ const thumbnailUrl = "https://i.ytimg.com/vi/4k6Vznnd_-c/hqdefault.jpg";
 const uploadDate = "2025-07-08T06:00:00+08:00";
 const duration = "PT2M50S";
 const embedUrl = "https://www.youtube.com/embed/4k6Vznnd_-c";
-const transcript = `
-A cold wind whispered through the night,
+
+const transcript = `A cold wind whispered through the night,
 Streetlamps blinked beneath the sky.
 A cat sat still on Privet Drive,
 As secrets stirred where shadows lie.
@@ -63,8 +64,7 @@ Left to dream in silence, mild.
 The cat moved on, the lamplights glowed,
 The letter spoke of all they owed.
 The night exhaled, the tale begun—
-A boy, a scar, a rising sun.
-`;
+A boy, a scar, a rising sun.`;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -81,32 +81,39 @@ const jsonLd = {
 
 <BaseLayout title={title} description={description}>
 
-  <h1>{title}</h1>
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-8">
 
-  <!-- 嵌入 YouTube 影片 -->
-  <iframe
-    width="560"
-    height="315"
-    src={embedUrl}
-    title={title}
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
+    <h1 class="text-3xl font-bold">{title}</h1>
 
-  <section>
-    <h2>Description</h2>
-    <p>{description}</p>
-  </section>
+    <!-- YouTube Embed -->
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-full"
+        src={embedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
 
-  <section>
-    <h2>Transcript</h2>
-    <pre>{transcript}</pre>
-  </section>
+    <!-- Description Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Description</h2>
+      <p class="whitespace-pre-line">{description}</p>
+    </section>
 
-  <!-- JSON-LD Schema -->
-  <script type="application/ld+json" is:raw>
-    {JSON.stringify(jsonLd)}
-  </script>
+    <!-- Transcript Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Transcript</h2>
+      <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded">{transcript}</pre>
+    </section>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" is:raw>
+      {JSON.stringify(jsonLd)}
+    </script>
+
+  </main>
 
 </BaseLayout>
