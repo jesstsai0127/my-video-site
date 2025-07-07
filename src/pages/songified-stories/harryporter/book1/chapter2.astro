@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+const title = "Underneath the Stairs – from Harry Potter and the Sorcerer's Stone Book 1 CH2: The Vanishing Glass";
+
+const description = `📖 *Chapter 2: The Vanishing Glass* follows young Harry as he endures a life of neglect in a cupboard under the stairs, unseen and unloved. But during a visit to the zoo, a chance encounter awakens something powerful inside him.
+
+🎵 *Underneath the Stairs* is an intimate, mid-tempo folk ballad capturing Harry’s quiet strength, growing resilience, and the first sparks of magic within. Featuring fingerpicked acoustic guitar and warm, emotive male vocals, this song continues our *Harry Potter Story-Song Series*, where every chapter unfolds through original music.
+
+📣 Subscribe and journey with us — one chapter, one song at a time.
+
+📌 **Missed Chapter 1? Listen to here:** [https://youtu.be/4k6Vznnd_-c]
+
+---
+
+## 🏷️ Hashtags
+
+#HarryPotter #PhilosophersStone #Chapter2 #TheVanishingGlass #UnderneathTheStairs #HarryPotterSong #StorytellingMusic #FantasyBallad #AcousticSong #MaleVocals #WizardingWorld #Hogwarts #MagicalAwakening #ChapterSongs
+
+---
+
+## 📌 Pinned Comment
+
+🎵 When did you first sense the magic in your life, like Harry at the zoo?
+
+Share your moment below 👇
+
+Subscribe for more storytelling songs from the Wizarding World!`;
+
+const thumbnailUrl = "https://i.ytimg.com/vi/e71_Jz8Ebik/hqdefault.jpg";
+const uploadDate = "2025-07-09T06:00:00+08:00";
+const duration = "PT3M05S";
+const embedUrl = "https://www.youtube.com/embed/e71_Jz8Ebik";
+
+const transcript = `A cupboard door that creaks at dawn,
+Dust and dreams he sleeps upon.
+The light slips in through cracks so thin,
+Another day of holding in.
+
+He counts the steps outside his bed,
+Before they shout and shake his head.
+The breakfast burns, the dishes clink,
+He disappears before they blink.
+A boy behind their backs, unseen,
+With secondhand clothes and silent dreams.
+The birthday cake is not for him,
+He fades like walls that once were dim.
+
+The zoo was loud, the glass was thick,
+But something in him twitched and clicked.
+He stared until the glass was gone,
+And snake and boy both carried on.
+"Thanks," it hissed, and he stepped back,
+As if he'd walked a secret track.
+They blamed his face, they cursed his name,
+But deep inside, he felt no shame.
+
+He doesn’t know the “how” or “why,”
+Just the way the air had sighed.
+He felt the world beneath his skin,
+A whisper that began within.
+Not rage, not pride — just something true,
+That didn't fit the life he knew.
+
+The car ride home was long and cold,
+With silence thick and anger bold.
+They locked him in and slammed the door,
+Back to the dust, the wooden floor.
+Yet in the dark, he smiled small,
+As if he'd never feared at all.
+For something stirred — a voice, a spark,
+A magic blooming in the dark.
+
+He’s more than bruises, more than chores,
+More than hiding under floors.
+A world unknown is drawing near,
+Beyond the glass, beyond the fear.`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: title,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+  embedUrl,
+  transcript
+};
+---
+
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-8">
+
+    <h1 class="text-3xl font-bold">{title}</h1>
+
+    <!-- YouTube Embed -->
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-full"
+        src={embedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Description Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Description</h2>
+      <p class="whitespace-pre-line">{description}</p>
+    </section>
+
+    <!-- Transcript Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Transcript</h2>
+      <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded">{transcript}</pre>
+    </section>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+
+  </main>
+
+</BaseLayout>

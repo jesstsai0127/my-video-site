@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+const title = "Harry Potter Story-Song Series – Book 1: The Sorcerer's Stone";
+const description = "A musical retelling of Harry Potter Book 1 through original songs – one chapter at a time.";
+---
+
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-6">
+    <h1 class="text-2xl font-bold">{title}</h1>
+    <p class="mb-4">{description}</p>
+
+    <ul class="list-disc list-inside space-y-2">
+      <li><a href="/songified-stories/harryporter/book1/chapter1">Chapter 1: A Child at the Door – from Harry Potter and the Sorcerer's Stone Book 1 CH1: The Boy Who Lived</a></li>
+      <li><a href="/songified-stories/harryporter/book1/chapter2">Chapter 2: Underneath the Stairs – from Harry Potter and the Sorcerer's Stone Book 1 CH2: The Vanishing Glass</a></li>
+      <!-- 將來繼續新增 chapter3, chapter4... -->
+    </ul>
+  </main>
+
+</BaseLayout>
