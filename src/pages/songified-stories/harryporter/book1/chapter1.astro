@@ -1,0 +1,97 @@
+---
+const title = "A Child at the Door – from Harry Potter and the Sorcerer's Stone Book 1 CH1: The Boy Who Lived";
+const description = `📖 *Chapter 1: The Boy Who Lived* introduces us to the aftermath of a dark war in the wizarding world. On a cold night at Privet Drive, a mysterious child is left on a doorstep — a boy marked by a lightning scar, destined to change everything.
+🎵 This original storytelling ballad, *A Child at the Door*, captures the quiet sorrow, whispered secrets, and fragile hope of that fateful night. Blending fingerpicked acoustic guitar with intimate male vocals, it’s a tender beginning to our **Harry Potter Story-Song Series**, where every chapter finds its voice in music.
+
+📣 Subscribe now and follow the journey — one chapter, one song at a time!
+📌 **Check out the previous episode:** *(link will go here for later videos)*
+
+---
+## 🏷️ Hashtags
+#HarryPotter #PhilosophersStone #Chapter1 #TheBoyWhoLived #AChildAtTheDoor #Hogwarts #Dumbledore #StorytellingMusic #FantasySong #AcousticBallad #MaleVocal #WizardingWorld #SoftFolk #ChapterSongs #HarryPotterSong
+---`;
+
+const videoId = "4k6Vznnd_-c";
+const uploadDate = "2025-07-08T06:00:00+08:00";
+const duration = "PT2M50S";
+const transcript = `A cold wind whispered through the night,
+Streetlamps blinked beneath the sky.
+A cat sat still on Privet Drive,
+As secrets stirred where shadows lie.
+
+He came in robes, a crooked hat,
+A twinkle deep in tired eyes.
+With hands that shook yet held the truth,
+He watched the silent, sleeping skies.
+The world had changed, a war had closed,
+But one small child still breathed, still rose.
+The scar upon his brow would mark
+The end of dark, the start of hope.
+
+She laid him down with gentle care,
+A letter tucked beneath his hand.
+The stars looked down on jet-black hair,
+The quiet weight of fate unplanned.
+He cried but once, then fell asleep,
+While owls took flight, the night ran deep.
+They left him there, with love and grief,
+Upon a porch, beneath belief.
+
+They didn’t know what he would be,
+The lightning child, the mystery.
+A world would whisper of his name,
+But he would grow without the fame.
+Behind closed doors, beneath the stairs,
+Unknowing yet, of what he bears.
+The world moved on, the sky turned gray,
+But magic breathed in him that day.
+
+He was the boy who lived through fire,
+Who shattered death, denied the pyre.
+But for now, he was just a child,
+Left to dream in silence, mild.
+
+The cat moved on, the lamplights glowed,
+The letter spoke of all they owed.
+The night exhaled, the tale begun—
+A boy, a scar, a rising sun.`;
+---
+
+<html lang="zh-Hant">
+  <head>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        name: title,
+        description: description,
+        thumbnailUrl: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+        uploadDate: uploadDate,
+        duration: duration,
+        embedUrl: `https://www.youtube.com/embed/${videoId}`,
+        transcript: transcript,
+      })
+    }} />
+  </head>
+  <body>
+    <h1>{title}</h1>
+    <iframe
+      width="560"
+      height="315"
+      src={`https://www.youtube.com/embed/${videoId}`}
+      title={title}
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+    <section>
+      <p>{description}</p>
+    </section>
+    <section>
+      <h2>Transcript</h2>
+      <pre style="white-space: pre-wrap;">{transcript}</pre>
+    </section>
+  </body>
+</html>

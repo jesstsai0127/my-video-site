@@ -1,0 +1,30 @@
+---
+import { Astro } from 'astro';
+
+const books = [
+  {
+    title: "Book 1: The Sorcerer's Stone",
+    url: "/songified-stories/harryporter/book1/chapter1",
+    description: "Start your journey with Chapter 1: The Boy Who Lived"
+  },
+  // 未來可新增更多書集或章節
+];
+---
+
+<html lang="zh-Hant">
+  <head>
+    <title>Harry Porter Story-Song Series 總覽</title>
+    <meta name="description" content="探索 Harry Porter 故事歌系列，逐章節享受獨特的敘事歌曲與影片。" />
+  </head>
+  <body>
+    <h1>Harry Porter Story-Song Series 總覽</h1>
+    <p>歡迎來到 Harry Porter 故事歌系列網站，請選擇以下章節開始聆聽：</p>
+    <ul>
+      {books.map(book => (
+        <li>
+          <a href={book.url}>{book.title}</a> - {book.description}
+        </li>
+      ))}
+    </ul>
+  </body>
+</html>
