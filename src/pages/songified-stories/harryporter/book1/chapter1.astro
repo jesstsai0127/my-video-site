@@ -110,9 +110,7 @@ const jsonLd = {
     </section>
 
     <!-- JSON-LD Schema -->
-    <script type="application/ld+json" is:raw>
-      {JSON.stringify(jsonLd)}
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 
   </main>
 
