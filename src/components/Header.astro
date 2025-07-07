@@ -1,6 +1,28 @@
-<nav style="padding: 1rem; background: #222; color: white;">
-  <a href="/" style="margin-right: 1rem;">🏠 Home</a>
-  <a href="/songified-stories" style="margin-right: 1rem;">🎵 Stories</a>
-  <a href="/electronic-music" style="margin-right: 1rem;">🎛 Electronic</a>
-  <a href="/sport-music">🏅 Sport</a>
-</nav>
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+}
+const { title, description, canonical } = Astro.props;
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {canonical && <link rel="canonical" href={canonical} />}
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+</head>
+

@@ -1,28 +1,15 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Welcome to Songified Media";
+const description = "Explore story-driven music videos across books, sports, and digital realms. Home for storytelling in motion.";
+const canonical = "https://songified-stories.netlify.app/";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Songified Stories - Home</title>
-  </head>
-  <body>
-    <Header />
-
-    <main>
-      <h1>Welcome to Songified Stories</h1>
-      <p>A creative space for storytelling, music, and cinematic expression.</p>
-
-      <h2>Featured Projects</h2>
-      <ul>
-        <li><a href="/songified-stories">🎵 Songified Stories</a></li>
-        <li><a href="/electronic-music">🎛 Electronic Music</a></li>
-        <li><a href="/sport-music">🏅 Sport Music</a></li>
-      </ul>
-    </main>
-
-    <Footer />
-  </body>
-</html>
+<BaseLayout {title} {description} {canonical}>
+  <h1>Songified Media</h1>
+  <p>This is the home for all our musical storytelling projects. Choose a category to explore:</p>
+  <ul>
+    <li><a href="/songified-stories">Songified Stories (Book-inspired music)</a></li>
+  </ul>
+</BaseLayout>

@@ -1,0 +1,24 @@
+---
+// 可重用 Layout，支援 SEO meta 傳入
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+}
+
+const { title, description, canonical } = Astro.props;
+---
+
+<html lang="en">
+  <Header title={title} description={description} canonical={canonical} />
+  <body>
+    <main style="padding: 2rem;">
+      <slot /> <!-- 實際頁面內容 -->
+    </main>
+    <Footer />
+  </body>
+</html>
+

@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Songified Stories";
+const description = "A collection of music videos inspired by books and storytelling. Explore how chapters become songs.";
+const canonical = "https://songified-stories.netlify.app/songified-stories";
+---
+
+<BaseLayout {title} {description} {canonical}>
+  <h1>{title}</h1>
+  <p>Every book has a story. Every chapter has a song.</p>
+  <ul>
+    <li><a href="/songified-stories/harryporter">🧙‍♂️ Harry Potter: The Story-Song Series</a></li>
+    <!-- 未來可加入更多系列如 Narnia, LOTR -->
+  </ul>
+</BaseLayout>

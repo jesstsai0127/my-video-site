@@ -1,30 +1,16 @@
 ---
-import { Astro } from 'astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 
-const books = [
-  {
-    title: "Book 1: The Sorcerer's Stone",
-    url: "/songified-stories/harryporter/book1/chapter1",
-    description: "Start your journey with Chapter 1: The Boy Who Lived"
-  },
-  // 未來可新增更多書集或章節
-];
+const title = "Harry Potter Story-Song Series";
+const description = "Discover the Harry Potter saga like never before — through original chapter-by-chapter songs.";
+const canonical = "https://songified-stories.netlify.app/songified-stories/harryporter";
 ---
 
-<html lang="zh-Hant">
-  <head>
-    <title>Harry Porter Story-Song Series 總覽</title>
-    <meta name="description" content="探索 Harry Porter 故事歌系列，逐章節享受獨特的敘事歌曲與影片。" />
-  </head>
-  <body>
-    <h1>Harry Porter Story-Song Series 總覽</h1>
-    <p>歡迎來到 Harry Porter 故事歌系列網站，請選擇以下章節開始聆聽：</p>
-    <ul>
-      {books.map(book => (
-        <li>
-          <a href={book.url}>{book.title}</a> - {book.description}
-        </li>
-      ))}
-    </ul>
-  </body>
-</html>
+<BaseLayout {title} {description} {canonical}>
+  <h1>{title}</h1>
+  <p>Each chapter of the Harry Potter series reimagined as a cinematic ballad.</p>
+  <ul>
+    <li><a href="/songified-stories/harryporter/book1/chapter1">📘 Book 1 – Chapter 1: The Boy Who Lived</a></li>
+    <!-- 更多章節可繼續添加 -->
+  </ul>
+</BaseLayout>

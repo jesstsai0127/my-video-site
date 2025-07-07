@@ -1,19 +1,14 @@
 ---
-const title = "A Child at the Door – from Harry Potter and the Sorcerer's Stone Book 1 CH1: The Boy Who Lived";
-const description = `📖 *Chapter 1: The Boy Who Lived* introduces us to the aftermath of a dark war in the wizarding world. On a cold night at Privet Drive, a mysterious child is left on a doorstep — a boy marked by a lightning scar, destined to change everything.
-🎵 This original storytelling ballad, *A Child at the Door*, captures the quiet sorrow, whispered secrets, and fragile hope of that fateful night. Blending fingerpicked acoustic guitar with intimate male vocals, it’s a tender beginning to our **Harry Potter Story-Song Series**, where every chapter finds its voice in music.
+import BaseLayout from '../../../../../layouts/BaseLayout.astro';
 
-📣 Subscribe now and follow the journey — one chapter, one song at a time!
-📌 **Check out the previous episode:** *(link will go here for later videos)*
-
----
-## 🏷️ Hashtags
-#HarryPotter #PhilosophersStone #Chapter1 #TheBoyWhoLived #AChildAtTheDoor #Hogwarts #Dumbledore #StorytellingMusic #FantasySong #AcousticBallad #MaleVocal #WizardingWorld #SoftFolk #ChapterSongs #HarryPotterSong
----`;
-
+const title = "A Child at the Door – Book 1 Chapter 1";
+const description = "An original ballad capturing the quiet sorrow and fragile hope of Harry Potter's first night on Privet Drive.";
+const canonical = "https://songified-stories.netlify.app/songified-stories/harryporter/book1/chapter1";
 const videoId = "4k6Vznnd_-c";
 const uploadDate = "2025-07-08T06:00:00+08:00";
 const duration = "PT2M50S";
+const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+const embedUrl = `https://www.youtube.com/embed/${videoId}`;
 const transcript = `A cold wind whispered through the night,
 Streetlamps blinked beneath the sky.
 A cat sat still on Privet Drive,
@@ -57,41 +52,58 @@ The night exhaled, the tale begun—
 A boy, a scar, a rising sun.`;
 ---
 
-<html lang="zh-Hant">
-  <head>
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "VideoObject",
-        name: title,
-        description: description,
-        thumbnailUrl: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
-        uploadDate: uploadDate,
-        duration: duration,
-        embedUrl: `https://www.youtube.com/embed/${videoId}`,
-        transcript: transcript,
-      })
-    }} />
-  </head>
-  <body>
-    <h1>{title}</h1>
-    <iframe
-      width="560"
-      height="315"
-      src={`https://www.youtube.com/embed/${videoId}`}
-      title={title}
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-    <section>
-      <p>{description}</p>
-    </section>
-    <section>
-      <h2>Transcript</h2>
-      <pre style="white-space: pre-wrap;">{transcript}</pre>
-    </section>
-  </body>
-</html>
+<BaseLayout {title} {description} {canonical}>
+  <h1>{title}</h1>
+
+  <iframe width="100%" height="315" src={embedUrl} frameborder="0" allowfullscreen></iframe>
+
+  <p><strong>Upload Date:</strong> 2025-07-08</p>
+  <p><strong>Duration:</strong> 2 minutes 50 seconds</p>
+
+  <h2>Description</h2>
+  <p>
+    📖 <em>Chapter 1: The Boy Who Lived</em> introduces us to the aftermath of a dark war in the wizarding world.
+    On a cold night at Privet Drive, a mysterious child is left on a doorstep — a boy marked by a lightning scar,
+    destined to change everything.
+  </p>
+  <p>
+    🎵 This original storytelling ballad, <strong>A Child at the Door</strong>, captures the quiet sorrow, whispered secrets, and fragile hope of that fateful night.
+    Blending fingerpicked acoustic guitar with intimate male vocals, it’s a tender beginning to our
+    <strong>Harry Potter Story-Song Series</strong>, where every chapter finds its voice in music.
+  </p>
+  <p>
+    📣 Subscribe now and follow the journey — one chapter, one song at a time!
+    <br />
+    📌 <strong>Check out the previous episode:</strong> (link will go here for later videos)
+  </p>
+
+  <h2>📌 Pinned Comment</h2>
+  <blockquote>
+    🎵 What was your favorite moment from Harry’s first night on Privet Drive?<br />
+    Let us know in the comments 👇<br />
+    Subscribe for more storytelling songs from the Wizarding World!
+  </blockquote>
+
+  <h2>🏷️ Hashtags</h2>
+  <p>
+    #HarryPotter #PhilosophersStone #Chapter1 #TheBoyWhoLived #AChildAtTheDoor #Hogwarts #Dumbledore #StorytellingMusic #FantasySong #AcousticBallad #MaleVocal #WizardingWorld #SoftFolk #ChapterSongs #HarryPotterSong
+  </p>
+
+  <h2>🎤 Transcript</h2>
+  <pre style="white-space: pre-wrap; font-family: inherit;">{transcript}</pre>
+
+  <!-- JSON-LD VideoObject Schema -->
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      name: title,
+      description,
+      thumbnailUrl,
+      uploadDate,
+      duration,
+      embedUrl,
+      transcript
+    })}
+  </script>
+</BaseLayout>
