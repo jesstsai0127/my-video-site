@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+const title = "No One Writes to Me – from Harry Potter Book 1 Chapter 3: The Letters from No One";
+const description = `📖 *In Chapter 3 of Harry Potter and the Philosopher’s Stone, Harry begins receiving letters addressed directly to him — yet every attempt is thwarted by his cruel uncle Vernon. As the letters multiply, so does the promise of a world waiting beyond the cupboard under the stairs.*
+
+🎵 *This original storytelling folk ballad captures the quiet hope and rising tension in Harry’s heart as a thousand letters fall from the sky. Blending fingerpicked acoustic guitar, soft piano, and intimate male vocals, it brings this pivotal chapter to life.*
+
+📣 *Subscribe to follow our **Harry Potter: A Song for Every Chapter** series and relive the magic through music.*
+
+📌 *Missed the previous song? Catch it here → [Underneath the Stairs – Chapter 2 Song](https://youtu.be/e71_Jz8Ebik)*
+
+🏷️ *#HarryPotter #PhilosophersStone #Chapter3 #LettersFromNoOne #StorytellingMusic #HarryPotterSong #FantasyFolk #AcousticBallad #WizardingWorld #FolkNarrative*`;
+const thumbnailUrl = "https://i.ytimg.com/vi/rEdvJLPxw/hqdefault.jpg";
+const uploadDate = "2025-07-10T06:00:00+08:00";
+const duration = "PT3M20S";
+const embedUrl = "https://www.youtube.com/embed/rEdvJLPxw";
+
+const transcript = `The wind taps soft on the window pane,
+A boy lies still with hope and strain.
+The world moves on without his name,
+But something stirs — it’s not the same.
+
+Each morning starts in dust and grey,
+The cupboard door keeps dreams away.
+He watches shadows pass him by,
+A spark behind his quiet eye.
+A letter slips beneath the frame,
+He sees it, heart now lit with flame.
+But hands too fast and eyes too cold
+Will steal the truth before it's told.
+
+He counts the cracks along the floor,
+The post slips through, then comes no more.
+Each try they make to send it near,
+Gets chased by fists and eyes of fear.
+The chimney coughs, the hallway shakes,
+Still every word, the uncle breaks.
+But something waits beyond the lies,
+A world that sees, a world that tries.
+
+The silence grows, then breaks again,
+A thousand letters in the rain.
+He cannot read, he cannot speak,
+But in his chest, the silence leaks.
+A moment near, a truth so wide —
+What if he’s more than what they hide?
+
+They flee the town, the streets, the shore,
+They lock the doors and bolt the floor.
+But still they come — the notes won’t die,
+They sail through storms, they fill the sky.
+He dreams of ink, of parchment white,
+A name that's his, a claim, a light.
+And in the dark, with heart set free,
+He whispers soft: “Please write to me.”
+
+So much he's missed, so much to learn,
+But paper waits and candles burn.
+Not just a boy beneath the stair —
+Someone out there knows he's there.`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: title,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+  embedUrl,
+  transcript
+};
+---
+
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-8">
+
+    <h1 class="text-3xl font-bold">{title}</h1>
+
+    <!-- YouTube Embed -->
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-full"
+        src={embedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Description Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Description</h2>
+      <p class="whitespace-pre-line">{description}</p>
+    </section>
+
+    <!-- Transcript Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Transcript</h2>
+      <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded">{transcript}</pre>
+    </section>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+
+  </main>
+
+</BaseLayout>
