@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+const title = "Knocking Down the Silence | Harry Potter Book 1 Chapter 4: The Keeper of the Keys Story Song";
+const description = `📺 YouTube Title
+Knocking Down the Silence | Harry Potter Book 1 Chapter 4: The Keeper of the Keys Story Song
+
+📝 YouTube Description
+📖 In Chapter 4 of *Harry Potter and the Philosopher’s Stone*, the door bursts open on a stormy night as Hagrid arrives to change Harry’s life forever—telling him he’s a wizard and inviting him to Hogwarts.
+
+🎵 This song captures the mystery, emotion, and hope of that pivotal moment, with fingerpicked guitar, intimate vocals, and a slow-burning emotional arc.
+
+📣 This is part of the “Harry Potter: One Song Per Chapter” series. Subscribe and relive the magic, one melody at a time.
+
+👉 Watch the previous chapter here: https://youtu.be/0-rEdvJLPxw
+
+📊 Keywords: Harry Potter Song, Storytelling Song, Book 1 Chapter 4
+
+🏷️ Hashtags
+#HarryPotter #HarryPotterSongs #HagridArrives
+
+📄 Hashtags in Description (SEO tail)
+#HarryPotter, #PhilosophersStone, #Chapter4, #HarryPotterSong, #StorytellingMusic, #FantasySong, #Hagrid, #YoureAWizardHarry, #WizardingWorld, #AcousticFolk
+
+🎛️ Video Tags
+harry potter song, harry potter storytelling music, philosophers stone chapter 4 song, youre a wizard harry, hagrid arrives, fantasy folk pop acoustic, book to song adaptation, storytelling music series, passenger style harry potter, ed sheeran acoustic fantasy, wizarding world music, emotional harry potter song, harry potter chapter 4 music, keeper of the keys song, hogwarts letter moment
+
+📌 Pinned Comment
+🔑 What would you do if a giant kicked down your door and told you you’re a wizard?
+Tell us your favorite line from this song 👇 and don’t forget to subscribe for more Harry Potter storytelling songs!`;
+
+const thumbnailUrl = "https://i.ytimg.com/vi/rEdvJLPxw/hqdefault.jpg";
+const uploadDate = "2025-07-11T06:00:00+08:00";
+const duration = "PT3M20S";
+const embedUrl = "https://www.youtube.com/embed/rEdvJLPxw";
+
+const transcript = `Rain hit the sea-worn boards outside the shack that night,
+The wind was howling louder than the lantern light.
+A crash like thunder—door blown clean away,
+A giant silhouette stepped in, turned night to day.
+Uncle’s face went white, Aunt Petunia froze,
+Dudley trembled, hiding behind his nose.
+But the man just smiled, kind behind the wild,
+Spoke like thunder softened by a child.
+
+He said, “Harry, didn’t yeh ever wonder why?
+Why the glass shattered, why the owl could fly?”
+Hagrid was his name—keeper of a truth untold,
+With pockets full of sausages and secrets old.
+He handed Harry a crumpled, yellowed page,
+A letter long delayed by fear and rage.
+“Yer a wizard,” he said, simple and still—
+Like a stone tossed gently on a windowsill.
+
+The fire grew warm as the past came undone,
+Petunia raged, spilled stories kept from their son.
+Vernon barked lies, but Hagrid stood tall,
+Snapped a tail on Dudley with no fear at all.
+Harry sat quiet, the world turned again,
+Years of cupboards and silence starting to end.
+No more letters in chimneys or owls in disguise—
+Just truth in a storm, and truth never lies.
+
+In the roar of the night, a path came clear,
+A world once hidden now drawing near.
+No turning back from that final door,
+He wasn’t just “Harry” anymore.`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: title,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+  embedUrl,
+  transcript
+};
+---
+
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-8">
+
+    <h1 class="text-3xl font-bold">{title}</h1>
+
+    <!-- YouTube Embed -->
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-full"
+        src={embedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Description Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Description</h2>
+      <p class="whitespace-pre-line">{description}</p>
+    </section>
+
+    <!-- Transcript Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Transcript</h2>
+      <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded">{transcript}</pre>
+    </section>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+
+  </main>
+
+</BaseLayout>
