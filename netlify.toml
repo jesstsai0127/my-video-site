@@ -1,6 +1,6 @@
 # 這個設定檔告訴 Netlify 如何處理重新導向
 
-# 針對 sitemap 和 robots.txt 的特定規則
+# 1. 針對 sitemap 和 robots.txt 的特定規則
 # 這些規則必須放在最前面，以確保它們被優先處理
 [[redirects]]
   from = "/sitemap-index.xml"
@@ -17,7 +17,7 @@
   to = "/robots.txt"
   status = 200
 
-# 這是針對單頁應用程式 (SPA) 的「全攔截」規則
+# 2. 這是針對單頁應用程式 (SPA) 的「全攔截」規則
 # 它會將所有其他未匹配到的請求都導向到 index.html
 # 這條規則必須放在最後
 [[redirects]]
