@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+const title = "Where Bricks Give Way | Harry Potter Book 1 Ch. 5: Diagon Alley Story Song";
+const description = `📖 Harry's first journey into the wizarding world begins as Hagrid takes him through the Leaky Cauldron to the magical shopping street, Diagon Alley. After discovering his inheritance at Gringotts bank, Harry buys his school supplies and has a tense first encounter with Draco Malfoy. The day culminates at Ollivanders, where he is chosen by a wand that shares its core with Lord Voldemort's, sealing his extraordinary destiny.
+
+🎵 This storytelling song captures the wonder and destiny of Harry's first visit to Diagon Alley. With a magical acoustic folk style, this Harry Potter Song for Book 1 Chapter 5 brings the bustling street, the Gringotts vaults, and the fateful moment at Ollivanders to life.
+
+📣 This is part of a series where we create a song for every chapter of Harry Potter. Subscribe to follow the entire magical journey!
+
+**Hashtags:**
+#HarryPotter, #HarryPotterSongs, #DiagonAlley
+
+#PhilosophersStone, #DiagonAlley, #Ollivanders, #TheWandChoosesTheWizard, #HarryPotterSong, #StorytellingMusic, #AcousticFolk, #WizardingWorld, #Hedwig, #Book1
+
+**Video Tags (內部 SEO 標籤):**
+harry potter book 1 chapter 5, diagon alley song, harry potter fan music, ollivanders wand shop, the wand chooses the wizard, harry potter gets his wand, gringotts bank, leaky cauldron, hedwig's theme acoustic, storytelling music, book to song, wizarding world music, passenger style folk, harry potter music series, harry meets malfoy
+
+**Pinned Comment:**
+Ollivander's revelation is one of the most iconic moments in the series. What do you think Harry was feeling when he learned his wand was the brother to Voldemort's? Shock? Fear? Pride?
+Share your thoughts below, and subscribe to hear the next chapter's song!`;
+const thumbnailUrl = "https://i.ytimg.com/vi/J_BGvCvNp4k/hqdefault.jpg";
+const uploadDate = "2025-07-12T06:00:00+08:00";
+const duration = "PT3M55S";
+const embedUrl = "https://www.youtube.com/embed/J_BGvCvNp4k";
+
+const transcript = `Behind the pub, The Leaky Cauldron, in a London yard of grey,
+Hagrid taps a pattern on the bricks and they begin to sway.
+They fold and shrink and disappear, to show a cobbled lane,
+A world of crooked shops and signs, beneath the sun and rain.
+His jaw goes slack, his glasses slip, his mind can't take it in,
+A street of magic, wild and deep, where his new life can begin.
+
+They walk to Gringotts, tall and white, where goblins guard the door,
+A cart ride through the stalactites, a thousand feet or more.
+He sees the gold his parents left, a fortune in a heap,
+And watches Hagrid take a thing from a vault that's dark and deep.
+A grubby package, small and plain, a secret to be kept,
+While tears of gratitude and loss are silently wept.
+
+At Madam Malkin's, getting robes, a boy with silver hair,
+He talks of blood and what's "their sort" with an entitled air.
+A bitter taste, a first small crack in this enchanting dream,
+Not everything is golden here, or so it starts to seem.
+
+And oh, this world he never knew is suddenly so true,
+From dragon's breath to a snowy owl, a birthday gift for you.
+He's not just Harry, strange and small, the boy beneath the stairs,
+He's found a home behind the wall, away from vacant stares.
+
+The final stop, with peeling paint, a single wand on show,
+Ollivanders, a dusty place, where destinies can grow.
+The old man's eyes are silver moons, he measures, bone and height,
+"The wand will choose the wizard, son, and fill his world with light."
+He tries a dozen, maybe more, they're stubborn, cold, and dead,
+'Til one is placed within his hand, and words are left unsaid.
+
+It's holly wood and phoenix feather, eleven inches long,
+A sudden warmth shoots up his arm, where he has felt so wrong.
+And red and golden sparks ignite, a bond is forged and sealed,
+A power that was sleeping deep is finally revealed.
+
+"It's curious," the old man sighs, "how this has come to be."
+"The phoenix gave one other feather... just one, you see."
+"His wand, it did great things... terrible, yes, but great."
+"And now you walk out in the sun, to meet your coming fate."`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: title,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+  embedUrl,
+  transcript
+};
+---
+
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-8">
+
+    <h1 class="text-3xl font-bold">{title}</h1>
+
+    <!-- YouTube Embed -->
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-full"
+        src={embedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Description Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Description</h2>
+      <p class="whitespace-pre-line">{description}</p>
+    </section>
+
+    <!-- Transcript Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Transcript</h2>
+      <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded">{transcript}</pre>
+    </section>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+
+  </main>
+
+</BaseLayout>
