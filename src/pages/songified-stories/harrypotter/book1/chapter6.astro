@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+const title = "Through the Wall | Harry Potter Book 1 Ch 6: Journey to Platform 9¾ Song";
+const description = `📝 YouTube Description
+Harry discovers Platform 9¾ and takes his first journey on the Hogwarts Express. Along the way, he meets Ron Weasley, eats magical sweets, and experiences belonging for the first time. The train carries not just luggage—but hope, friendship, and the start of his new life.
+🎵 This ballad captures the tender, nostalgic energy of the journey—soft acoustic melodies, gentle vocals, and storytelling lyricism.
+📣 This is part of our Harry Potter “one song per chapter” series. Don’t forget to subscribe for more chapters!
+👉 Watch the previous chapter here: https://youtu.be/J_BGvCvNp4k
+
+🏷️ Hashtags
+#HarryPotter, #HarryPotterSongs, #PlatformNineAndThreeQuarters
+Full Hashtags 
+#HarryPotter, #PhilosophersStone, #Chapter6, #HarryPotterSong, #StorytellingMusic, #PlatformNineAndThreeQuarters, #HogwartsExpress, #FantasyFolk, #WizardingWorld, #AcousticFolkBallad
+
+🎛️ Video Tags
+harry potter song, harry potter storytelling music, philosophers stone chapter 6 song, platform nine and three quarters song, hogwarts express music, fantasy folk acoustic, storytelling folk pop, book to song adaptation, passenger style harry potter, ron weasley first appearance, ed sheeran acoustic fantasy, wizarding world fan music, soft acoustic ballad, magical journey train song
+
+📌 Pinned Comment
+
+🚂 What part of Harry’s first train journey gave *you* chills?
+Let us know in the comments 👇 and don’t forget to subscribe for the next Harry Potter story-song!`;
+const thumbnailUrl = "https://i.ytimg.com/vi/FVcNmqiwi0Q/hqdefault.jpg";
+const uploadDate = "2025-07-13T06:00:00+08:00";
+const duration = "PT3M35S";
+const embedUrl = "https://www.youtube.com/embed/FVcNmqiwi0Q";
+
+const transcript = `Steam in the morning, bricks still asleep,
+The space between worlds, a breath held deep.
+
+He stood with a trolley, alone in the crowd,
+The ticket was folded, his heart beating loud.
+No one believed him, they never did care,
+But something about this place, charged the air.
+A mother with ginger hair spoke to her sons,
+"Best do it at a bit of a run."
+He stared at the bricks, then swallowed the doubt,
+One step, two—then the world spun about.
+
+He walked through the wall, where logic had lied,
+A platform appeared on the other side.
+
+Through the wall, where no one believes,
+Into the smoke and the drifting steam.
+A scar and a name, a boy with no past,
+Found the future in the thunder that passed.
+Through the wall, where magic begins,
+With strangers, with trunks, with owls and with whims.
+
+Ohhh—through the wall...
+
+He found an empty seat, wide eyes and awe,
+Red hair again, a friendly draw.
+"Are you really—?" came the quiet ask,
+He nodded once, shed his mask.
+Chocolate frogs, and Bertie Bott’s lies,
+New names, new truths beneath the skies.
+From cupboard to carriage, from bruises to cheers,
+He laughed for the first time in years.
+
+He crossed the threshold, not just of stone—
+But into a world where he wasn’t alone.
+
+Through the wall, where a whisper became
+A song with a name, a soul with no shame.
+He’d been forgotten, hidden away—
+Now he belongs, come what may.
+Through the wall, where his real life spins,
+On rails of fate, where magic begins.
+
+Through the wall—not just of brick and stone,
+But the silence, the doubt, the fear of alone.
+With Ron, with sweets, with talk of a hat,
+And spells he never thought he could cast.
+He watched the fields blur past the glass,
+And felt—for once—the present could last.
+
+Through the wall, he found the light,
+Left behind the lonely night.
+No turning back, no need to hide—
+He’s on the train, with stars to ride.
+
+He's on the train... with stars to ride.`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: title,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+  embedUrl,
+  transcript
+};
+---
+
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-8">
+
+    <h1 class="text-3xl font-bold">{title}</h1>
+
+    <!-- YouTube Embed -->
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-full"
+        src={embedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Description Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Description</h2>
+      <p class="whitespace-pre-line">{description}</p>
+    </section>
+
+    <!-- Transcript Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Transcript</h2>
+      <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded">{transcript}</pre>
+    </section>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+
+  </main>
+
+</BaseLayout>
