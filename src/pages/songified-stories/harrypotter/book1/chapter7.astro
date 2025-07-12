@@ -47,4 +47,94 @@ But Harry feared what it might choose.
 Not Slytherin... he begged inside,
 His voice unheard, but not denied.
 
-Whispers in the
+Whispers in the hat, secrets in the thread,
+Tales of greatness, of paths not tread.
+A boy unsure, yet somehow bold,
+Refused the dark, chose heart over gold.
+The hall erupts, the choice is made,
+Among the brave, his fears now fade.
+
+Oh, oh, oh — the voice inside...
+
+Ghosts float by with glowing grace,
+Paintings stare from every space.
+The feast begins, but he just stares,
+At faces smiling, friendships there.
+From lonely cupboard to candlelight,
+The world now shifts beneath the night.
+He’s not just Harry — he's found a door,
+To something bigger than before.
+
+He didn’t know what lay ahead,
+But knew he’d never crawl to bed.
+
+Whispers in the hat, echoes of might,
+Paths diverging in candlelight.
+A boy reborn, a fire lit,
+The mark of choice—he didn’t quit.
+A home of magic, daring, grace,
+He’d finally found his rightful place.
+
+No crown of snakes, no dark disguise,
+He turned his face toward open skies.
+The voice he feared had shown him why,
+He gets to choose how high to fly.
+The sorting hat just tipped and smiled,
+“You’ll do well,” it softly filed.
+
+Whispers in the hat, no more alone,
+He found the courage to make his own.
+A name once lost, now proud and bright,
+He walks with friends into the night.
+
+“You’ll do well… you’ll do well…”`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: title,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+  embedUrl,
+  transcript
+};
+---
+
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-8">
+
+    <h1 class="text-3xl font-bold">{title}</h1>
+
+    <!-- YouTube Embed -->
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-full"
+        src={embedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Description Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Description</h2>
+      <p class="whitespace-pre-line">{description}</p>
+    </section>
+
+    <!-- Transcript Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Transcript</h2>
+      <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded">{transcript}</pre>
+    </section>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+
+  </main>
+
+</BaseLayout>
