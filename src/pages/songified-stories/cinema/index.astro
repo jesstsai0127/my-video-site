@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = "Cinematic Songs";
+const description = "Songs that retell scenes and emotions from powerful films. Explore storytelling through cinema.";
+const canonical = "https://songified-stories.netlify.app/songified-stories/cinema";
+---
+
+<BaseLayout {title} {description} {canonical}>
+  <h1>Cinematic Songs</h1>
+  <p>Where sound meets silver screen — songs inspired by the emotional and visual power of movies.</p>
+  <ul>
+    <!-- 將來可以改為各部電影資料夾連結 -->
+    <li>🎬 <a href="#">Interstellar – “Time and Gravity”</a></li>
+    <li>🎬 <a href="#">Inception – “Dream Within a Dream”</a></li>
+    <li>🎬 <a href="#">The Dark Knight – “Chaos in Gotham”</a></li>
+  </ul>
+</BaseLayout>

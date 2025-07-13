@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = "Topical Songs";
+const description = "Songs inspired by current events, global issues, and human moments that define our time.";
+const canonical = "https://songified-stories.netlify.app/songified-stories/topical";
+---
+
+<BaseLayout {title} {description} {canonical}>
+  <h1>Topical Songs</h1>
+  <p>These songs speak to the present — real-world stories turned into melodies and meaning.</p>
+  <ul>
+    <!-- 將來可以改為各議題資料夾連結 -->
+    <li>📰 <a href="#">“Voices from Ukraine” – War & Resistance</a></li>
+    <li>📰 <a href="#">“Burning Skies” – Climate Crisis Anthem</a></li>
+    <li>📰 <a href="#">“Screens and Silence” – Post-Pandemic Reflections</a></li>
+  </ul>
+</BaseLayout>
