@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+const title = "Eyes Like Shadows | Harry Potter Book 1 Ch 8: The Potions Master";
+const description = `📖 In Chapter 8 of Harry Potter and the Philosopher’s Stone, Harry begins his magical education. While soaring skies and sparkling spells delight him, it's the cold dungeon of the Potions classroom that leaves a deeper mark. Professor Snape's simmering hostility hints at secrets buried in the past.
+
+🎵 This storytelling song captures the emotional tension and mystery between Harry and Snape — a relationship shaped by shadows of the past. Atmospheric, acoustic, and introspective, it’s a song of unspoken grudges and silent questions.
+
+📣 This is part of our Harry Potter Song for Every Chapter series. Subscribe to follow Harry's journey — chapter by chapter, song by song.
+
+👉 Watch the previous chapter here: https://youtu.be/J_BGvCvNp4k
+
+SEO Keywords: Harry Potter Song, Storytelling Song, Book 1 Chapter 8
+
+🔖 Hashtags
+#HarryPotter, #HarryPotterSongs, #ThePotionsMaster
+#HarryPotter, #PhilosophersStone, #Chapter8, #HarryPotterSong, #StorytellingMusic, #FantasySong, #ThePotionsMaster, #SnapeAndHarry, #WizardingWorld, #AcousticFolk
+
+🏷️ Video Tags
+harry potter song, harry potter storytelling music, philosophers stone chapter 8 song, snape and harry song, fantasy folk acoustic, book to song adaptation, storytelling music series, passenger style harry potter, ed sheeran style fantasy folk, potions master song, dungeon classroom scene, severus snape tension, emotional narrative ballad, hogwarts first lessons, snape vs harry
+
+📌 Pinned Comment
+⚗️ Do you think Snape truly hated Harry… or something deeper?
+Share your thoughts in the comments 👇 and don’t forget to subscribe for more chapter-by-chapter Harry Potter songs!`;
+const thumbnailUrl = "https://i.ytimg.com/vi/_1hIIWcrhE0/hqdefault.jpg";
+const uploadDate = "2025-07-15T06:00:00+08:00";
+const duration = "PT3M43S";
+const embedUrl = "https://www.youtube.com/embed/_1hIIWcrhE0";
+
+const transcript = `Steam curls through the dungeon’s air,
+Eyes like shadows, watching there.
+
+First lessons bloom with wonder wide,
+Charms that flicker, brooms that glide.
+But in the depths where sun won’t fall,
+A voice like poison fills the hall.
+Potions brewed with ancient grace,
+Yet all he sees is Harry’s face.
+A boy who’s lost, unsure, unknown,
+Stands judged by one of ice and stone.
+
+Why does he glare with fire unspoken?
+What ancient wound has still not broken?
+
+Eyes like shadows, past not mine,
+He sees the scar, not the line.
+Words like daggers, cold and smart,
+Cutting deeper than the art.
+Is this hate or hidden pain?
+Will I ever learn his name?
+
+Harry… Potter… Harry…
+
+Flying free above the trees,
+Laughter carried by the breeze.
+But down below, a bitter war—
+With rules he never asked for.
+He’s not his father, not his fame,
+Yet bears the brunt of an old name.
+In Snape’s dark eyes, the past still burns,
+And Harry’s caught in twisted turns.
+
+What truth lies buried in his stare?
+A war long gone… still hanging there.
+
+Eyes like shadows, storm beneath,
+He hides the truth behind his teeth.
+Lessons turned to silent war,
+Questions whispered evermore.
+He punishes what he can’t forgive—
+In Harry’s face, the past still lives.
+
+He was the boy who should have died,
+So says the silence in Snape’s eyes.
+Not a hero, not yet wise,
+Just a child beneath the lies.
+He walks a path he never chose,
+Through doors the past will never close.
+
+Eyes like shadows, they still see,
+Not who I am—but who I’ll be.
+The dungeon fades, but not the flame,
+And still… he never speaks my name.
+
+“…He has his mother’s eyes.”`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: title,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+  embedUrl,
+  transcript
+};
+---
+
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-8">
+
+    <h1 class="text-3xl font-bold">{title}</h1>
+
+    <!-- YouTube Embed -->
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-full"
+        src={embedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Description Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Description</h2>
+      <p class="whitespace-pre-line">{description}</p>
+    </section>
+
+    <!-- Transcript Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Transcript</h2>
+      <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded">{transcript}</pre>
+    </section>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+
+  </main>
+
+</BaseLayout>
