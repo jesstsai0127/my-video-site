@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+const title = "Shadows in the Hall | Harry Potter Book 1 Ch 9: The Midnight Duel";
+const description = `📖 In Chapter 9 of Harry Potter and the Philosopher's Stone, a reckless midnight duel leads Harry, Ron, Hermione, and Neville into forbidden corridors. Instead of a fight, they find danger, a monstrous guardian, and the first clue to a greater mystery beneath Hogwarts.
+
+🎵 This song captures the creeping tension, thrill of rebellion, and the chilling discovery of something far bigger than childish rivalries. A warm, narrative acoustic ballad with cinematic undertones — the sound of heartbeats in the dark.
+
+📣 This is part of our Harry Potter Song for Every Chapter series. Subscribe to follow Harry’s story, chapter by chapter, through music.
+
+👉 Watch the previous chapter here: https://youtu.be/_1hIIWcrhE0
+
+Harry Potter Song, Storytelling Song, Book 1 Chapter 9
+
+🏷️ Hashtags
+#HarryPotter, #HarryPotterSongs, #TheMidnightDuel
+
+Hashtags：
+#HarryPotter, #PhilosophersStone, #Chapter9, #HarryPotterSong, #StorytellingMusic, #FantasySong, #TheMidnightDuel, #WizardingWorld, #MagicRevealed, #AcousticFolk
+
+🎛️ Video Tags
+harry potter song, harry potter storytelling music, philosophers stone chapter 9 song, midnight duel song, fantasy folk acoustic, book to song adaptation, passenger style harry potter, acoustic ballad midnight duel, ed sheeran style narrative song, wizarding world fan music, harry and fluffy encounter, harry potter forbidden corridor, storytelling folk song
+
+📌 Pinned Comment
+🦴 What would you have done facing that monstrous three-headed dog?
+Drop your thoughts in the comments 👇 and don’t forget to subscribe for more Harry Potter story-songs!`;
+
+const thumbnailUrl = "https://i.ytimg.com/vi/KX-PS6HZa7g/hqdefault.jpg";
+const uploadDate = "2025-07-16T06:00:00+08:00";
+const duration = "PT3M28S";
+const embedUrl = "https://www.youtube.com/embed/KX-PS6HZa7g";
+
+const transcript = `Footsteps in the ancient stone,
+A dare at night, a boy alone.
+
+A wand beneath a cloak of shade,
+A promise made, a foolish game.
+The clock struck twelve, the castle sighed,
+The walls, they watched, the ghosts, they spied.
+Malfoy’s words still stung like rain,
+But courage calls through fear and pain.
+
+What waits beyond the turning stair?
+A duel, a trap, or midnight air?
+
+Shadows in the hall, danger sings,
+Whispers follow, unseen things.
+Boys who dream of battles won,
+Run from ghosts and what they've done.
+Magic hums behind the door,
+And nothing’s safe anymore.
+
+Oh, oh, oh — nothing’s safe anymore.
+
+A key turned tight, a hound revealed,
+Three heads, three mouths, no fate concealed.
+Hermione’s voice, a trembling plea,
+“Get out, you fools, before it sees!”
+A trap for something deep below,
+A secret none were meant to know.
+
+The night runs thin, the chase begins,
+In every shadow, something grins.
+
+Shadows in the hall, footsteps flee,
+A secret kept where none should be.
+Boys and girls with hearts alight,
+Trade their fears to own the night.
+Magic hums behind the door,
+And nothing’s safe anymore.
+
+No more games, no coward’s crown,
+They’ll face what hunts them down.
+A world of dark, a tale begun,
+A war not yet but soon to come.
+They’ve seen too much, they can’t ignore,
+And nothing’s safe anymore.
+
+Shadows in the hall, hearts still race,
+But in their eyes, a fiercer grace.
+They’ll find what lies behind that door,
+For nothing’s safe anymore.
+
+And nothing’s safe… anymore.`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: title,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+  embedUrl,
+  transcript
+};
+---
+
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-8">
+
+    <h1 class="text-3xl font-bold">{title}</h1>
+
+    <!-- YouTube Embed -->
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-full"
+        src={embedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Description Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Description</h2>
+      <p class="whitespace-pre-line">{description}</p>
+    </section>
+
+    <!-- Transcript Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Transcript</h2>
+      <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded">{transcript}</pre>
+    </section>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+
+  </main>
+
+</BaseLayout>
