@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+const title = "Sky and Flame | Harry Potter Book 1 Ch 11: Quidditch";
+const description = `📖 Chapter Summary
+Harry takes flight in his first Quidditch match, revealing a natural talent. But when his broom is hexed mid-air, it’s Hermione’s quick thinking that saves him. The chapter blends thrill, danger, and friendship—culminating in Harry's dramatic victory and emotional growth through flight.
+
+📺 YouTube Title  
+Sky and Flame | Harry Potter Book 1 Ch 11: Quidditch
+
+📝 YouTube Description  
+📖 In Chapter 11 of *Harry Potter and the Philosopher’s Stone*, Harry steps onto the Quidditch pitch for the first time. The sky becomes his battleground, as something dark interferes with his flight. But with Hermione's courage and his own instincts, he rises above fear and danger—catching the Snitch and proving he's more than a name.
+
+🎵 This song captures the soaring wonder and quiet courage of Harry's first real flight. A cinematic folk ballad about defiance, friendship, and finding yourself in the air.
+
+📣 This is part of our *Harry Potter Song for Every Chapter* series. Subscribe to follow Harry’s magical journey — chapter by chapter, song by song.
+
+👉 Watch the previous chapter here: https://youtu.be/mcGKZyLKUPc
+
+Harry Potter Song, Storytelling Song, Book 1 Chapter 11
+
+🏷️ Hashtags  
+#HarryPotter, #HarryPotterSongs, #QuidditchMatch
+
+📌 Hashtags  
+#HarryPotter, #PhilosophersStone, #Chapter11, #HarryPotterSong, #StorytellingMusic, #FantasySong, #QuidditchMatch, #MagicFlight, #WizardingWorld, #AcousticFolk
+
+🎛️ Video Tags  
+harry potter song, harry potter storytelling music, philosophers stone chapter 11 song, quidditch match song, harry first flight, fantasy folk pop acoustic, book to song adaptation, passenger style harry potter, ed sheeran fantasy folk, wizarding world fan music, seeker harry song, harry broom hex scene, hermione saves harry, snitch catch scene music
+
+📌 Pinned Comment  
+✨ What was your favorite moment from Harry’s first Quidditch match?  
+Drop your thoughts below 👇 and don’t forget to subscribe for more magical story-songs from the world of Harry Potter!`;
+const thumbnailUrl = "https://i.ytimg.com/vi/EhiPA2BNPWI/hqdefault.jpg";
+const uploadDate = "2025-07-18T06:00:00+08:00";
+const duration = "PT4M22S";
+const embedUrl = "https://www.youtube.com/embed/EhiPA2BNPWI";
+
+const transcript = `Beneath cold sky and golden light,  
+A boy takes flight, beyond the fight.
+
+Boots on grass, a chill in air,  
+Scar above eyes, wind in hair.  
+Crowds awake with roaring breath,  
+The field below, a dance with death.  
+He grips the broom, not just to win—  
+But to prove he’s more than where he’s been.
+
+This sky, this game—it’s where he’s real,  
+Where doubt dissolves in spinning wheels.
+
+Chasing the light in a sea of air,  
+A seeker born from silent care.  
+Through every dive and turning twist,  
+He finds himself in freedom’s kiss.  
+No spell, no fear, no weight of name—  
+Just boy and broom in sky and flame.
+
+Ohhh—he flies…
+
+But danger slinks where banners wave,  
+A spell is cast, the broom misbehaves.  
+Harry tilts, the crowd holds breath,  
+A shadow stalks in silent depth.  
+Hermione runs through fire and fear,  
+“It's Snape!” she yells, eyes sharp and clear.  
+In secret fire, she breaks the chain—  
+To keep a friend from falling pain.
+
+The sky was close, then slipped away,  
+But friendship fought to let him stay.
+
+Chasing the light while shadows scheme,  
+They tried to break his flying dream.  
+But friends who burn with loyal fire,  
+Can turn a fall into a flyer.  
+Through spell and smoke, he finds control—  
+A seeker not just chasing gold.
+
+No father’s hand, no safety net,  
+But still he rides through every threat.  
+Above them all, he loops and veers—  
+He is the storm that conquers fears.  
+And when the Snitch reflects the sun,  
+The boy becomes the chosen one.
+
+The sky is calm, the crowd stands still,  
+He caught the light with steady will.  
+A boy no more—he took his chance,  
+And found his truth inside the dance.
+
+He flies… because he must.`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: title,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+  embedUrl,
+  transcript
+};
+---
+
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-8">
+
+    <h1 class="text-3xl font-bold">{title}</h1>
+
+    <!-- YouTube Embed -->
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-full"
+        src={embedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Description Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Description</h2>
+      <p class="whitespace-pre-line">{description}</p>
+    </section>
+
+    <!-- Transcript Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Transcript</h2>
+      <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded">{transcript}</pre>
+    </section>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+
+  </main>
+
+</BaseLayout>
