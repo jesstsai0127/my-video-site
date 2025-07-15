@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+const title = "Troll in the Shadows | Harry Potter Book 1 Ch 10: Hallowe’en";
+const description = `📖 In Chapter 10 of Harry Potter and the Philosopher's Stone, Hogwarts celebrates Hallowe'en with magic and feasting — until terror strikes. A troll invades the castle, leaving Hermione trapped and alone. Harry and Ron rush to her side, facing fear head-on and forging a friendship that will shape their destiny.
+🎵 This ballad captures the quiet dread, reckless courage, and the beauty of a bond formed in the darkest hour. Acoustic folk storytelling for fantasy hearts.
+📣 This is part of our Harry Potter Song for Every Chapter series. Subscribe and relive every chapter in song.
+
+👉 Watch the previous chapter here: https://youtu.be/KX-PS6HZa7g
+Harry Potter Song, Storytelling Song, Book 1 Chapter 10
+
+🏷️ Hashtags
+#HarryPotter, #HarryPotterSongs, #TrollInTheShadows
+#HarryPotter, #PhilosophersStone, #Chapter10, #HarryPotterSong, #StorytellingMusic, #FantasySong, #TrollInTheDungeon, #WizardingWorld, #AcousticFolk, #MagicAndFriendship
+
+🎛️ Video Tags
+harry potter song, harry potter storytelling music, philosophers stone chapter 10 song, troll in the dungeon song, fantasy folk acoustic, book to song adaptation, passenger style harry potter, ed sheeran style narrative song, wizarding world fan music, halloween at hogwarts, harry ron hermione friendship, troll fight scene music, fantasy ballad, cinematic folk song, mountain troll harry potter
+
+📌 Pinned Comment
+🦴 That troll fight moment though — what would you have done?
+Tell us in the comments 👇 and subscribe for more Harry Potter story-songs!`;
+const thumbnailUrl = "https://i.ytimg.com/vi/mcGKZyLKUPc/hqdefault.jpg";
+const uploadDate = "2025-07-17T06:00:00+08:00";
+const duration = "PT3M49S";
+const embedUrl = "https://www.youtube.com/embed/mcGKZyLKUPc";
+
+const transcript = `A chill in the stone, the candles sway,  
+A shadow moves where none should stray.
+
+Pumpkins flicker, the feast begins,  
+Laughter rising in ancient wings.  
+But words can wound, and tears will fall,  
+A girl alone behind a stall.  
+While others cheer, the storm descends,  
+And hearts are tested, foes to friends.
+
+A crash, a scream, a name in fear,  
+They chose to run, though death was near.
+
+Troll in the shadows, danger's breath,  
+Three hearts defy the hand of death.  
+In darkest hour, true courage shows,  
+Not born of might, but the path they chose.  
+A bond is forged through stone and strife,  
+A night that knits a thread for life.
+
+Oh-oh-oh, a bond unspoken.
+
+A wand in hand, a trembling shout,  
+A troll's foul stench, no easy out.  
+A shattered sink, a falling club,  
+A risk so reckless, born of love.  
+From lonely eyes and hearts estranged,  
+The world in minutes, forever changed.
+
+They didn’t pause, they didn’t plan,  
+They fought because they simply can.
+
+Troll in the shadows, danger’s breath,  
+Three hearts defy the hand of death.  
+In darkest hour, true courage shows,  
+Not born of might, but the path they chose.  
+A bond is forged through stone and strife,  
+A night that knits a thread for life.
+
+Not house nor blood defines their fate,  
+But what they choose, the love they make.  
+A monster down, a promise made,  
+That none would face the dark afraid.
+
+Troll in the shadows, but no one’s alone,  
+They found a strength they’d never known.
+
+“We did it… together.”`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: title,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+  embedUrl,
+  transcript
+};
+---
+
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-8">
+
+    <h1 class="text-3xl font-bold">{title}</h1>
+
+    <!-- YouTube Embed -->
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-full"
+        src={embedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Description Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Description</h2>
+      <p class="whitespace-pre-line">{description}</p>
+    </section>
+
+    <!-- Transcript Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Transcript</h2>
+      <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded">{transcript}</pre>
+    </section>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+
+  </main>
+
+</BaseLayout>
