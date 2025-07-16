@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+const title = "Fire in the Tower | Harry Potter Book 1 Ch 14: Norbert the Norwegian Ridgeback";
+const description = `📖 Chapter Summary
+In Chapter 14 of *Harry Potter and the Philosopher’s Stone*, Hagrid hatches a forbidden Norwegian Ridgeback dragon named Norbert. As Harry, Ron, and Hermione attempt to help their friend care for the newborn, they find themselves breaking school rules and sneaking through Hogwarts at night — leading to detention and a harsh lesson about choices and consequences.
+
+📺 YouTube Title
+Fire in the Tower | Harry Potter Book 1 Ch 14: Norbert the Norwegian Ridgeback
+
+📝 YouTube Description
+📖 In Chapter 14 of *Harry Potter and the Philosopher’s Stone*, a secret hatches in Hagrid’s hut — a dragon named Norbert. As the trio works to help Hagrid, they find themselves sneaking through the castle, cloaked in invisibility and risking everything.
+
+🎵 “Fire in the Tower” captures the thrill, mystery, and consequences of loving something dangerous. A folk-acoustic ballad wrapped in magical secrecy and emotional tension.
+
+📣 This is part of our *Harry Potter Song for Every Chapter* series. Subscribe to follow Harry's journey — chapter by chapter, song by song.
+
+👉 Watch the previous chapter here: https://youtu.be/0b4zTlubT54
+
+Harry Potter Song, Storytelling Song, Book 1 Chapter 14
+
+🏷️ Hashtags
+#HarryPotter, #HarryPotterSongs, #NorbertTheDragon
+
+Hashtags：
+#HarryPotter, #PhilosophersStone, #Chapter14, #HarryPotterSong, #StorytellingMusic, #FantasySong, #NorbertTheDragon, #ForbiddenPets, #WizardingWorld, #AcousticFolk
+
+🎛️ Video Tags
+harry potter song, harry potter storytelling music, philosophers stone chapter 14 song, norbert the norwegian ridgeback, hagrid's dragon, fantasy folk pop acoustic, book to song adaptation, ed sheeran harry potter style, invisibility cloak night scene, hogwarts rule breaking song, magical folk storytelling, norbert dragon theme, harry ron hermione detention, wizarding world music
+
+📌 Pinned Comment
+🐉 Would *you* have helped Hagrid hide Norbert?
+Drop your thoughts below 👇 and don’t forget to subscribe for more Harry Potter story-songs!`;
+
+const thumbnailUrl = "https://i.ytimg.com/vi/rxm8W1EN-4M/hqdefault.jpg";
+const uploadDate = "2025-07-21T00:00:00+08:00";
+const duration = "PT3M45S";
+const embedUrl = "https://www.youtube.com/embed/rxm8W1EN-4M";
+
+const transcript = `A spark in the dark, in a hidden room,  
+A secret flame begins to bloom.
+
+In Hagrid's hut beneath the moon,  
+A dragon sleeps in its fragile cocoon.  
+Ron’s wide eyes, Hermione's frown,  
+Harry knows — they can’t back down.  
+A riddle in scales, with smoke in its breath,  
+A secret cradled, close to death.
+
+The egg has cracked, the game is on,  
+Their quiet nights are almost gone.
+
+Fire in the tower, glowing bright,  
+Born in shadows, out of sight.  
+Rules forgotten in the flame,  
+All for a dragon with no name.  
+Hearts alight with wild belief,  
+But secrets bring the sharpest grief.
+
+Norbert, Norbert… no one must know...
+
+Sneaking past the suits of mail,  
+Invisible cloak, a whispered tale.  
+A glance, a step — they’re not alone,  
+McGonagall’s voice, like breaking stone.  
+One moment's thrill, a lifetime cost,  
+In chasing fire, what have they lost?
+
+Caught beneath the ancient stars,  
+A lie too bold, the risk too far.
+
+Fire in the tower, burning pride,  
+Truth and trouble now collide.  
+House points vanish in the wind,  
+For every thrill, the weight of sin.  
+Friendship flickers, courage bends,  
+All for the sake of what they defend.
+
+He was never theirs to keep,  
+But still they held the fire so deep.  
+In midnight skies, the dragon soared,  
+While punishment knocked on Hogwarts’ door.  
+The thrill, the guilt, the hidden scars —  
+They burned as bright as newborn stars.
+
+Fire in the tower, just a spark,  
+But it lit the wild within the dark.  
+They broke the rules, they paid the price,  
+A dragon’s gift, a roll of dice.
+
+And Norbert... was never really gone.`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: title,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+  embedUrl,
+  transcript
+};
+---
+
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-8">
+
+    <h1 class="text-3xl font-bold">{title}</h1>
+
+    <!-- YouTube Embed -->
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-full"
+        src={embedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Description Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Description</h2>
+      <p class="whitespace-pre-line">{description}</p>
+    </section>
+
+    <!-- Transcript Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Transcript</h2>
+      <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded">{transcript}</pre>
+    </section>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+
+  </main>
+
+</BaseLayout>
