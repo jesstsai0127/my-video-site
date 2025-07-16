@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+const title = "The Stone of Flame | Harry Potter Book 1 Ch 13: Nicolas Flamel";
+const description = `📖 In Chapter 13 of *Harry Potter and the Philosopher’s Stone*, the trio uncovers the long-sought truth: Nicolas Flamel is the key to the Philosopher’s Stone, a magical object that grants immortality. But with every answer comes a new threat — shadows stalk Hogwarts, and Harry’s dreams whisper warnings.
+
+🎵 This song captures the chapter’s tension, wonder, and the creeping sense of danger. A narrative folk-pop ballad blending acoustic warmth with eerie textures, this is the sound of knowledge uncovered and innocence shaken.
+
+📣 This is part of our *Harry Potter: A Song for Every Chapter* series. Subscribe to follow the story through music!
+
+👉 Watch the previous chapter here: https://youtu.be/TRcYDCtJQsY
+
+Reflections in the Glass | Harry Potter Book 1 Ch 12: The Mirror of Erised
+
+🏷️ Hashtags
+#HarryPotter, #HarryPotterSongs, #NicolasFlamel
+
+Hashtags：
+#HarryPotter, #PhilosophersStone, #Chapter13, #HarryPotterSong, #StorytellingMusic, #FantasySong, #NicolasFlamel, #PhilosophersStoneRevealed, #WizardingWorld, #CinematicFolk
+
+🎛️ Video Tags
+harry potter song, harry potter storytelling music, philosophers stone chapter 13 song, nicolas flamel song, fantasy folk acoustic, book to song adaptation, mystery ballad harry potter, ed sheeran fantasy acoustic, cinematic storytelling music, philosopher’s stone revealed, harry potter shadows, snape suspicion song, hogwarts midnight scenes, neville brave moment, harry’s dream foreshadowing
+
+📌 Pinned Comment
+🧪 What would *you* do if you held the Philosopher's Stone?
+Tell us in the comments 👇 and hit that subscribe button for more Harry Potter story-songs!`;
+const thumbnailUrl = "https://i.ytimg.com/vi/0b4zTlubT54/hqdefault.jpg";
+const uploadDate = "2025-07-20T00:00:00+08:00";
+const duration = "PT3M56S";
+const embedUrl = "https://www.youtube.com/embed/0b4zTlubT54";
+
+const transcript = `In pages worn and dreams that burn,  
+The secret waits for minds to learn.
+
+Through midnight fires and whispering halls,  
+They searched for truths in ancient scrolls.  
+A name once lost in dusty lines,  
+Beneath their fingers, gold defines.  
+The Stone of life, the Elixir’s key,  
+Hid in the folds of mystery.  
+Flamel, immortal, out of lore,  
+Guarded secrets, centuries stored.
+
+The pieces click, the truth unchains,  
+But darker forces stake their claims.
+
+The Stone of Flame, they hold it tight,  
+While shadows crawl through Hogwarts night.  
+A name revealed, a power born,  
+A mystery cracked, but minds are torn.  
+What price for life? What lines are crossed?  
+The magic found, but innocence lost.
+
+Nicolas Flamel…  
+Nicolas Flamel…
+
+Neville stumbles through the cold,  
+Mocked and cursed, his story told.  
+But courage sparked behind his eyes,  
+While others chased what power hides.  
+Snape’s glare burns like secret fire,  
+A silent game of dark desire.  
+Harry dreams of pain and flame,  
+A hooded thief without a name.
+
+A flicker moves behind the veil,  
+They’re not alone upon this trail.
+
+The Stone of Flame, they hold it tight,  
+While shadows crawl through Hogwarts night.  
+A name revealed, a power born,  
+A mystery cracked, but minds are torn.  
+Through fear and flame, through midnight frost,  
+The magic found, but innocence lost.
+
+The Mirror’s gone, the fire still glows,  
+What hides beneath the dungeon stones?  
+Fluffy sleeps and Flamel’s truth stands —  
+Not all who guard have blood on hands.
+
+The Stone remains, unseen, unknown,  
+But now they fear they’re not alone.  
+A tale that’s old begins to twist,  
+The shadows stir beneath the mist.`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: title,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+  embedUrl,
+  transcript
+};
+---
+
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-8">
+
+    <h1 class="text-3xl font-bold">{title}</h1>
+
+    <!-- YouTube Embed -->
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-full"
+        src={embedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Description Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Description</h2>
+      <p class="whitespace-pre-line">{description}</p>
+    </section>
+
+    <!-- Transcript Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Transcript</h2>
+      <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded">{transcript}</pre>
+    </section>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+
+  </main>
+
+</BaseLayout>
