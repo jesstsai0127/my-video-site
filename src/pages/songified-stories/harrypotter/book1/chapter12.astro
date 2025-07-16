@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+const title = "Reflections in the Glass | Harry Potter Book 1 Ch 12: The Mirror of Erised";
+const description = `📖 In Chapter 12 of Harry Potter and the Philosopher’s Stone, Harry finds the Mirror of Erised—a magical artifact that shows the viewer their deepest desire. For Harry, it’s his parents, lost to Voldemort’s curse. Night after night, he returns, trying to hold onto their memory. But Dumbledore reminds him: “It does not do to dwell on dreams and forget to live.”
+
+🎵 This song captures the haunting wonder and ache of that moment—a blend of acoustic melancholy and ambient textures that echo Harry’s grief and longing.
+
+📣 This is part of our Harry Potter Song for Every Chapter series. Subscribe and follow the journey — one song at a time.
+
+👉 Watch the previous chapter here: https://youtu.be/EhiPA2BNPWI
+
+Harry Potter Song, Storytelling Song, Book 1 Chapter 12
+
+🏷️ Hashtags
+#HarryPotter, #HarryPotterSongs, #MirrorOfErised
+
+Hashtags：
+#HarryPotter, #PhilosophersStone, #Chapter12, #HarryPotterSong, #StorytellingMusic, #FantasySong, #MirrorOfErised, #MagicMirror, #WizardingWorld, #AcousticFolk
+
+🎛️ Video Tags
+harry potter song, harry potter storytelling music, philosophers stone chapter 12 song, mirror of erised song, harry sees his parents, fantasy folk acoustic, book to song adaptation, passenger style harry potter, ed sheeran fantasy ballad, emotional acoustic harry potter, wizarding world fan music, harry grief song, magical mirror chapter song
+
+📌 Pinned Comment
+🪞 What would the Mirror of Erised show you?
+Share your thoughts below 👇 and don’t forget to subscribe for more emotional Harry Potter story-songs!`;
+
+const thumbnailUrl = "https://i.ytimg.com/vi/TRcYDCtJQsY/hqdefault.jpg";
+const uploadDate = "2025-07-19T00:00:00+08:00";
+const duration = "PT4M33S";
+const embedUrl = "https://www.youtube.com/embed/TRcYDCtJQsY";
+
+const transcript = `Snow on stone, the castle sleeps,  
+In hidden rooms, the silence keeps.
+
+Through halls of hush and falling frost,  
+A cloak of night, the world embossed.  
+He slips past rules, past sleep and bed,  
+Chasing something Dumbledore once said.  
+Behind the glass, in silver spread,  
+A boy sees faces long since dead.
+
+Not a dream, not a lie,  
+But a truth no one can buy...
+
+Reflections in the glass, echoes of the past,  
+A mother’s eyes, a father's laugh.  
+He longs to stay, frozen in flame,  
+A whisper of love, repeating his name.  
+The mirror holds what he can't touch—  
+A family's warmth, remembered too much.
+
+Night after night, he steals away,  
+To where the ghosts in glass still play.  
+Ron sees glory, medals and gold,  
+But Harry sees arms he’ll never hold.  
+Not just a boy with a scar so wide,  
+But a son, a child—loved, denied.
+
+He knows it can’t be truly real,  
+But he’d give the world for what he feels.
+
+Reflections in the glass, dreams made to last,  
+But time moves on, it’s fading fast.  
+The more he looks, the more he aches,  
+A mirror’s gift, a silent ache.  
+He'd trade his fame, he'd trade his scar,  
+Just to know who they really are.
+
+But the mirror can’t give back the years,  
+It can’t dry blood, it can’t stop tears.  
+Dumbledore’s voice, soft but firm,  
+“It shows us not life, but what we yearn.”  
+He turns away with heavy heart,  
+But knows it’s time to truly start.
+
+Reflections in the glass, he leaves behind,  
+The world he wants, the ties that bind.  
+What’s lost may guide but not define,  
+He walks away... but feels the shine.
+
+He walks away... but feels the shine.`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: title,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+  embedUrl,
+  transcript
+};
+---
+
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-8">
+
+    <h1 class="text-3xl font-bold">{title}</h1>
+
+    <!-- YouTube Embed -->
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-full"
+        src={embedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Description Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Description</h2>
+      <p class="whitespace-pre-line">{description}</p>
+    </section>
+
+    <!-- Transcript Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Transcript</h2>
+      <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded">{transcript}</pre>
+    </section>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+
+  </main>
+
+</BaseLayout>
