@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+const title = "Down Through the Trapdoor | Harry Potter Book 1 Ch 16: Through the Trapdoor";
+const description = `📖 Chapter Summary
+In Chapter 16 of *Harry Potter and the Philosopher's Stone*, Harry, Ron, and Hermione descend through the trapdoor beneath the castle, facing magical obstacles to protect the Philosopher's Stone. They solve riddles, play life-sized chess, and bravely fight through darkness not for glory—but to stop a great evil. This is the moment where they prove who they really are.
+
+📺 YouTube Title
+Down Through the Trapdoor | Harry Potter Book 1 Ch 16: Through the Trapdoor
+
+📝 YouTube Description
+📖 In Chapter 16 of *Harry Potter and the Philosopher’s Stone*, Harry, Hermione, and Ron confront the ultimate test of courage. Beneath the trapdoor, they face a gauntlet of magical trials meant to protect the Philosopher’s Stone. Each challenge demands trust, intellect, and sacrifice—revealing the strength of their friendship and the heart of true heroism.
+
+🎵 This cinematic song captures the fear, thrill, and emotional stakes of descending into the unknown. With orchestral textures, haunting piano, and narrative storytelling, it immerses you in one of the most powerful moments of the first book.
+
+📣 This is part of our *Harry Potter Song for Every Chapter* series. Subscribe now to follow the magic, chapter by chapter, song by song.
+
+👉 Watch the previous chapter here: https://youtu.be/WQCQbThZDDo  
+Previous Chapter Name: Into the Forest Dark | Harry Potter Book 1 Ch 15: The Forbidden Forest
+
+🏷️ Hashtags
+#HarryPotter, #HarryPotterSongs, #TrapdoorChallenge
+
+Hashtags：
+#HarryPotter, #PhilosophersStone, #Chapter16, #HarryPotterSong, #StorytellingMusic, #FantasySong, #TrapdoorChallenge, #MagicalTrials, #WizardingWorld, #CinematicFolk
+
+🎛️ Video Tags
+harry potter song, harry potter storytelling music, philosophers stone chapter 16 song, trapdoor challenge song, fantasy orchestral pop, cinematic storytelling music, book to song adaptation, harry ron hermione bravery, fantasy film music style, wizarding world fan music, magical obstacles song, through the trapdoor harry potter, devils snare logic puzzle, harry potter musical storytelling
+
+📌 Pinned Comment
+🗝 What magical trial in this chapter gave *you* chills?  
+Drop your favorite trapdoor moment below 👇 and subscribe to catch every chapter-song in the Harry Potter song!`;
+
+const thumbnailUrl = "https://i.ytimg.com/vi/rO73EmLI1es/hqdefault.jpg";
+const uploadDate = "2025-07-23T00:00:00+08:00";
+const duration = "PT5M12S";
+const embedUrl = "https://www.youtube.com/embed/rO73EmLI1es";
+
+const transcript = `Stone beneath, the silence breaks,  
+A trapdoor waits for fate to wake.
+
+Through the fire, through the night,  
+They step where grown wizards fear the light.  
+A riddle, a key, a game of chess,  
+The path ahead demands no less.  
+Books whisper spells from pages old,  
+As Fluffy sleeps with secrets untold.  
+One wrong step, and all could fall—  
+But friendship dares to risk it all.
+
+Below the floor, behind the lore,  
+They chase the dark they can't ignore.
+
+Down through the trapdoor, into the flame,  
+No turning back, no one's the same.  
+A test of wit, of nerve, of heart—  
+Together, but each plays a part.  
+In shadows deep, they stake their claim,  
+For more than glory, more than fame.
+
+Devil’s Snare wraps, its tendrils cold,  
+But calm minds keep a tighter hold.  
+Keys that fly like metal birds,  
+And logic saves with silent words.  
+Ron stands tall where others stall,  
+The knight who dares to risk it all.  
+Each trial deeper than the last—  
+But they are forged from what they’ve passed.
+
+It's not the stone that draws them near,  
+It’s what they fight, it’s who they fear.
+
+Down through the trapdoor, hearts collide,  
+The truth burns brighter than the lies.  
+No wand can guide a soul unsure,  
+But love and loyalty endure.  
+They’re just eleven, still they stand—  
+A trio bound by fate's own hand.
+
+Through fire and fear, through traps and flame,  
+They seek what hides behind the name.  
+The stone, the face behind the mask—  
+Not every answer needs be asked.  
+What they became beneath the floor,  
+Is braver than they were before.
+
+Not for the prize, not for the gold,  
+But for a truth the heart can hold.  
+They went below, they chose to fight—  
+And came back burning with the light.`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: title,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+  embedUrl,
+  transcript
+};
+---
+
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-8">
+
+    <h1 class="text-3xl font-bold">{title}</h1>
+
+    <!-- YouTube Embed -->
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-full"
+        src={embedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Description Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Description</h2>
+      <p class="whitespace-pre-line">{description}</p>
+    </section>
+
+    <!-- Transcript Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Transcript</h2>
+      <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded">{transcript}</pre>
+    </section>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+
+  </main>
+
+</BaseLayout>
