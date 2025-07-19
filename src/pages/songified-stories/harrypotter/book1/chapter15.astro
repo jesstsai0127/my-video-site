@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+const title = "Into the Dark | Harry Potter Book 1 Ch 15: The Forbidden Forest";
+const description = `📖 Chapter Summary  
+Harry, Hermione, Neville, and Malfoy serve detention with Hagrid in the Forbidden Forest. They search for a wounded unicorn and encounter a cloaked figure drinking its blood — an early sign of Voldemort’s return. Harry is saved by Firenze, a centaur, who warns of dark omens and the boy’s connection to prophecy and danger.
+
+📺 YouTube Title  
+Into the Forest Dark | Harry Potter Book 1 Ch 15: The Forbidden Forest
+
+📝 YouTube Description  
+📖 In Chapter 15 of Harry Potter and the Philosopher's Stone, the stakes rise as Harry is sent into the Forbidden Forest for detention — a punishment that turns into a nightmare. What they find is no ordinary creature, but a sign of the return of something ancient and terrifying.
+
+🎵 This song brings the eerie, mythic atmosphere of the Forbidden Forest to life. From centaur warnings to a face under a hood, this haunting acoustic ballad explores fear, fate, and courage under moonlight.
+
+📣 This is part of our *Harry Potter Song for Every Chapter series. Subscribe to follow Harry’s journey — chapter by chapter, song by song.
+
+👉 Watch the previous chapter here: https://youtu.be/rxm8W1EN-4M  
+Previous Chapter Name: Fire in the Tower | Harry Potter Book 1 Ch 14: Norbert the Norwegian Ridgeback
+
+🏷️ Hashtags  
+#HarryPotter, #HarryPotterSongs, #ForbiddenForest
+
+Hashtags：  
+#HarryPotter, #PhilosophersStone, #Chapter15, #HarryPotterSong, #StorytellingMusic, #FantasySong, #ForbiddenForest, #UnicornAttack, #VoldemortReturns, #CloakedFigure
+
+🎛️ Video Tags  
+harry potter song, harry potter storytelling music, forbidden forest song, philosophers stone chapter 15 song, unicorn forest scene, voldemort unicorn blood, harry potter fan ballad, dark folk fantasy song, centaur saves harry, harry potter musical adaptation, forest of shadows, narrative acoustic ballad, eerie magical forest music, harry and firenze song, fantasy music series youtube
+
+📌 Pinned Comment  
+🌲 What part of the Forbidden Forest scene gave you chills the most?  
+Tell us in the comments 👇 and hit subscribe to follow each chapter’s song as the story unfolds!`;
+const thumbnailUrl = "https://i.ytimg.com/vi/WQCQbThZDDo/hqdefault.jpg";
+const uploadDate = "2025-07-22T00:00:00+08:00";
+const duration = "PT7M34S";
+const embedUrl = "https://www.youtube.com/embed/WQCQbThZDDo";
+
+const transcript = `Silver leaves and shifting eyes,  
+Midnight paths where danger lies.
+
+Out past the gates and torchlight glow,  
+They walked where even brave won’t go.  
+Hagrid spoke with voice half-grave,  
+Of unicorns and what they gave.  
+The woods were black, alive, unknown,  
+Each step a whisper, breath alone.  
+Malfoy smirked, but fear crept in,  
+This was no prank, no schoolyard sin.
+
+Tracks in blood, the trees grow tight—  
+What kills a unicorn in moonlight?
+
+In the forest deep and wild,  
+Where even centaurs fear the vile.  
+Something hunts beneath the shade,  
+A shadow born the stars evade.  
+Harry stands with fire in chest—  
+But even lions must rest.
+
+Even lions… must rest...
+
+The silver blood still marked the ground,  
+A lifeline broken, without a sound.  
+Then — a figure, hooded, pale,  
+Drinking life where light had failed.  
+Harry froze, the pain returned,  
+His scar aflame, his soul discerned.  
+Then came the hooves, a starlit light,  
+Firenze struck like dawn through night.
+
+Not all that walks in shadow’s lost,  
+But some will drink at any cost.
+
+In the forest deep and wild,  
+Where the old and cruel beguile.  
+The stars foretold what men ignore—  
+The Dark One’s breath returns once more.  
+A child marked, a dying light,  
+Still dares to stand and fight.
+
+Beneath the trees, fate cracked and bled,  
+The past returned, the future fled.  
+He knows the face beneath the hood—  
+And what he’d choose if he still could.  
+Not just a boy, not just a name—  
+The forest knows he’s in the game.
+
+The forest watched… and still it knew—  
+The darkest paths are made for few.`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: title,
+  description,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+  embedUrl,
+  transcript
+};
+---
+
+<BaseLayout title={title} description={description}>
+
+  <main class="max-w-screen-md mx-auto px-4 py-8 space-y-8">
+
+    <h1 class="text-3xl font-bold">{title}</h1>
+
+    <!-- YouTube Embed -->
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-full"
+        src={embedUrl}
+        title={title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Description Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Description</h2>
+      <p class="whitespace-pre-line">{description}</p>
+    </section>
+
+    <!-- Transcript Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Transcript</h2>
+      <pre class="whitespace-pre-wrap text-sm bg-gray-100 p-4 rounded">{transcript}</pre>
+    </section>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+
+  </main>
+
+</BaseLayout>
